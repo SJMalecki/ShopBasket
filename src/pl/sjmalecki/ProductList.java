@@ -41,6 +41,20 @@ public class ProductList {
         return 0;
     }
 
+    public int sellProduct(Basket basket, String item, int amount){
+        Product listProduct = list.get(item);
+        if(listProduct == null){
+            System.out.println("We don't sell " + item);
+            return 0;
+        }
+
+        if(sellProduct(item, amount) != 0){
+            basket.addToBasket(listProduct, amount);
+            return amount;
+        }
+        return 0;
+    }
+
     public Product get(String key){
         return list.get(key);
     }
