@@ -11,7 +11,8 @@ public class Main {
         product = new Product("Mleko", 2.67,2);
         productList.addProduct(product);
 
-        productList.sellProduct("Kasza", 3);
-        System.out.println(productList.toString());
+        Basket basket = new Basket("Default Basket");
+        productList.sellProduct(basket, "Kasza",1);
+        System.out.println(basket);
     }
 }
